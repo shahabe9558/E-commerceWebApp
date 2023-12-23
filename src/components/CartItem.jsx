@@ -2,7 +2,8 @@
 import {AiFillDelete} from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { remove } from '../redux/slices/cartSlice';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
+
 
 const CartItem = ({item}) => {
     const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const CartItem = ({item}) => {
 
     const removeFromCart = () => {
        dispatch(remove(item.id)); 
-       toast.success("Item remove from cart");
+       toast.success("Item Remove");
     }
     return(
         <div>

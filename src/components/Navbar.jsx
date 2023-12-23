@@ -5,7 +5,7 @@ import {FaShoppingCart} from 'react-icons/fa';
 const Navbar = ()=> {
     return(
         <div>
-            <NavLink>
+            <NavLink to='/'>
                 <div>
                     <img src= {logo} />
                 </div>
