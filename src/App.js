@@ -6,8 +6,8 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 function App() {
   return (
-    <div >
-      <div> 
+    <div className=''>
+      <div className='bg-slate-900 border'> 
         <Navbar/>
       </div>
       <Routes>
