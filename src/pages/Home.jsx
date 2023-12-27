@@ -35,7 +35,7 @@ const Home = ()=> {
                      }     
                   </div>
                   ) 
-                : (<p>No Product found</p>)
+                : (<p className="font-semibold mx-auto">No Product found</p>)
             }
         </div>
     )
