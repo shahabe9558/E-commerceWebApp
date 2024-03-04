@@ -11,7 +11,7 @@ const Card = ({product}) => {
         dispatch(add(product));
         toast.success("Item Added");   
     }
-      
+    
     const removeCart = ()=> {
         dispatch(remove(product.id));
         toast.error("Remove Item");  
