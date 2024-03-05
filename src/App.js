@@ -8,8 +8,8 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 function App() {
   return (
-    <div className='w-[100%] h-[100%] bg-richblack-900 flex flex-col'>
-      <div className='bg-slate-900 border'> 
+    <div className='w-[100%] h-[100%] flex flex-col'>
+      <div className='bg-richblack-900'> 
         <Navbar/>
       </div>
       <Routes>

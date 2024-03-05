@@ -12,7 +12,7 @@ const SignUpForm = ({ setlogIn }) => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
-    const [accountType, setAccountType] = useState({accountType:"student"});
+    const [accountType, setAccountType] = useState({accountType:"buyer"});
 
     const [formdata, setFormData] = useState({
         firstName: "",
@@ -69,21 +69,21 @@ const SignUpForm = ({ setlogIn }) => {
         <form onSubmit={submitHandler} className="text-white mt-8">
             <div className="flex bg-richblack-800 max-w-max rounded-full p-1 gap-x-1">
             <div
-          className={`${accountType === "student"
+          className={`${accountType === "buyer"
             ?
             "bg-richblack-900 text-richblack-5"
             : "bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
-          onClick={() => setAccountType("student")}>
-          Student
+          onClick={() => setAccountType("buyer")}>
+          Buyer
         </div>
 
         <div
-          className={`${accountType === "instructor"
+          className={`${accountType === "vendor"
             ?
             "bg-richblack-900 text-richblack-5"
             : "bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
-          onClick={() => setAccountType("instructor")}>
-          Instructor
+          onClick={() => setAccountType("vendor")}>
+          Vendor
         </div>
             </div>
 

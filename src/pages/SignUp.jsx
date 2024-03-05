@@ -1,17 +1,17 @@
-
 import Template from "../components/Template";
 import img from "../assets/signup.webp";
 
 const Signup = () =>{
     return(
-        <Template
-        title={"Join the million learning to code with StudyNotion for free"}
-        desc1={"Build Skills for today, tomorrow and beyond"}
-        desc2={"Education is future proof your career"}
-        image={img}
-        formType={"signup"}
-        cl
-        />
+        <div className="w-[100%] space-y-10 bg-richblack-900">
+            <Template
+            title={"Join Us and Indulge in Style"}
+            desc1={"Elevate Your Every Day-"}
+            desc2={"With our new Trends and Pattern"}
+            image={img}
+            formType={"signup"}
+            />
+        </div>
     );
 }
 export default Signup;
