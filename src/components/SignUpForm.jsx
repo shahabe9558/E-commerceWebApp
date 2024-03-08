@@ -2,17 +2,22 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { apiConnector } from "../services/apiConnector";
+import { endPoint } from "../services/apis";
+import { useDispatch, useSelector } from "react-redux";
+import { setisLogIn } from "../redux/slices/loginSlice";
 
 
 
 
 
-const SignUpForm = ({ setlogIn }) => {
+const SignUpForm = () => {
 
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
     const [accountType, setAccountType] = useState({accountType:"buyer"});
+    const dispatch = useDispatch();
 
     const [formdata, setFormData] = useState({
         firstName: "",
@@ -21,7 +26,7 @@ const SignUpForm = ({ setlogIn }) => {
         password: "",
         ConfirmPass: "",
     });
-    const{firstName, email, password} = formdata;
+    const{firstName, lastName, email, password} = formdata;
     console.log("formdata is ", formdata);
     function changeHandler(event) {
         const { name, value, checked, type } = event.target;
@@ -38,12 +43,16 @@ const SignUpForm = ({ setlogIn }) => {
     function setShowPasswordHandler2() {
         setShowPassword2((prev) => !prev);
     }
-
-    // const apiCall = async(name, email, password)=>{
-    //     console.log("api calles succefully");
-    //     let response = await apiConnector("POST", singUpApi.SIGN_UP_API, {name, email, password});
-    //     navigate('/login');
-    // }
+    
+    const apiCall = async (firstName, lastName, email, password)=>{
+        try{
+            let response = await apiConnector("post", endPoint.SIGN_IN_API, {firstName, lastName, email, password});
+            console.log(response);
+        }
+        catch(error){
+            console.log("Error While signing in");
+        }
+    }
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -56,13 +65,10 @@ const SignUpForm = ({ setlogIn }) => {
           ...formdata,
           accountType
         }
-    
-        setlogIn(true);
-        
-        // apiCall(firstName, email, password);
-        // toast.success("Account Create Successfull");
-    
-        // navigate("./loginServer/routes/signup");
+        apiCall(firstName, lastName, email, password);
+        dispatch(setisLogIn(true));
+        toast.success("Account Create Successfull");
+        navigate("/");
       }
     
     return (

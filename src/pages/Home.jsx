@@ -23,9 +23,9 @@ const Home = ()=> {
         fetchProductData();
     }, []);
     return(
-        <div className="space-y-10">
+        <div className="space-y-10 w-[100%] flex justify-center ">
             {
-                loading ? (<Spinner/>) : products.length > 0 
+                loading ? (<Spinner className="w-[100%]" />) : products.length > 0 
                 ? (
                   <div className="grid grid-cols-4 max-w-6xl p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]">
                      {

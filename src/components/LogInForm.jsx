@@ -2,12 +2,20 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
 import toast, { toastoast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { setisLogIn } from "../redux/slices/loginSlice";
+import {apiConnector} from "../services/apiConnector";
+import { endPoint } from "../services/apis";
+import axios from "axios";
 
-const LogInForm = ({setlogIn}) => {
+const LogInForm = () => {
 
+
+    const dispath = useDispatch();
     const navigate = useNavigate();
+    
 
-    const [FormData, setFormData] = useState({email:"", password:"", confirmPassword:"" })
+    const [FormData, setFormData] = useState({email:"", password:""})
     const [showPassword, setShowPassword] = useState(false);
     console.log("formdata is ", FormData);
     function changeHandler(event){
@@ -19,15 +27,23 @@ const LogInForm = ({setlogIn}) => {
           }
         });
     }
-
+    const {email, password} = FormData;
+  
+    const apiCall = async (email, password) => { 
+            try{
+                let response = await apiConnector("post", endPoint.LOG_IN_API, {email, password});
+                console.log("Response is ", response);
+            }
+            catch(error){
+                console.log(error);
+            }
+    }
     function submitHandler(event){
         event.preventDefault();
-        setlogIn(true);
-        navigate('/dashboard')
+        apiCall(email, password);
+        dispath(setisLogIn(true));
         toast.success("Logged In");
-        console.log("Logged in");
-        console.log(FormData);
-
+        navigate('/');
     }
     function setShowPasswordHandler(){
         console.log(setShowPassword);

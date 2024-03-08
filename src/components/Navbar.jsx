@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
     const { cart } = useSelector((state) => state);
-    const {isLogin} = useSelector((state) => state);
+    const login = useSelector((state) => state.login.value);
     return (
         <div className="flex justify-between h-20 max-w-7xl mx-auto p-3">
             <NavLink to="/">
@@ -21,13 +21,13 @@ const Navbar = () => {
                 </Link>
                 {/* this is login page */}
                 <Link to='/login'>
-                    { !isLogin && 
+                    { !login && 
                         <p>Login</p>
                     }
                 </Link>
                 <Link to='/signup'>
                     {
-                        !isLogin && 
+                        !login && 
                         <p>Signup</p>
                     }
                 </Link>
