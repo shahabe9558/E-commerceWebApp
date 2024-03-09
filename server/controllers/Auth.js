@@ -137,3 +137,8 @@ exports.login = async (req, res) => {
       });
     }
  }
+
+ exports.order = async (req, res)=>{
+   console.log("Order completely");
+ }
+

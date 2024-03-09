@@ -2,7 +2,9 @@ import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import toast from "react-hot-toast";
+import { apiConnector } from "../services/apiConnector";
+import { endPoint } from "../services/apis";
 
 const Cart = ()=> {
     const {cart} = useSelector((state) => state);
@@ -11,6 +13,17 @@ const Cart = ()=> {
     useEffect(()=> {
        setAmount(cart.reduce((total, num,) => total + num.price, 0))
     }, [cart]);
+
+    const apiCall = async () =>{
+            let response = await apiConnector('POST', endPoint.ORDER_NOW);
+            console.log(response);  
+    }
+    
+    // order handler define here 
+    const orderHandler = ()=>{
+        apiCall();
+        toast.success("Order Reaceive Succefully");
+    }
     return(
         <div>
              {cart.length > 0 ? (
@@ -42,8 +55,8 @@ const Cart = ()=> {
                             {" "}
                             {amount}
                           </p>
-                          <button className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-green-600 font-bold hover:text-green-700 p-3 text-xl mr-10">
-                            Checkout Now
+                          <button onClick={orderHandler} className="bg-green-700 hover:bg-purple-50 rounded-lg text-white transition duration-300 ease-linear mt-5 border-2 border-green-600 font-bold hover:text-green-700 p-3 text-xl mr-10">
+                            Order Now
                           </button>
                        </div>
                     </div>
