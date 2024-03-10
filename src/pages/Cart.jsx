@@ -15,7 +15,7 @@ const Cart = ()=> {
     }, [cart]);
 
     const apiCall = async () =>{
-            let response = await apiConnector('POST', endPoint.ORDER_NOW);
+            let response = await apiConnector('POST', endPoint.ORDER_NOW, {amount, cart});
             console.log(response);  
     }
     

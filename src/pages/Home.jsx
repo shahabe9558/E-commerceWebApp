@@ -23,7 +23,7 @@ const Home = ()=> {
         fetchProductData();
     }, []);
     return(
-        <div className="space-y-10 w-[100%] flex justify-center ">
+        <div className="space-y-10 w-[100%]  justify-center ">
             {
                 loading ? (<Spinner className="w-[100%]" />) : products.length > 0 
                 ? (

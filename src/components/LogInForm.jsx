@@ -29,9 +29,9 @@ const LogInForm = () => {
     }
     const {email, password} = FormData;
   
-    const apiCall = async (email, password) => { 
+    const apiCall = async () => { 
             try{
-                let response = await apiConnector("post", endPoint.LOG_IN_API, {email, password});
+                let response = await apiConnector("POST", endPoint.LOG_IN_API, {email, password});
                 console.log("Response is ", response);
             }
             catch(error){
@@ -40,10 +40,7 @@ const LogInForm = () => {
     }
     function submitHandler(event){
         event.preventDefault();
-        apiCall(email, password);
-        dispath(setisLogIn(true));
-        toast.success("Logged In");
-        navigate('/');
+        apiCall();
     }
     function setShowPasswordHandler(){
         console.log(setShowPassword);

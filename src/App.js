@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+
 function App() {
   return (
     <div className='w-[100%] h-[100%] flex flex-col'>
