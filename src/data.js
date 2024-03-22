@@ -1,14 +1,17 @@
-export const products = [
+export const Products = [
     {
       id: 1,
-      title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-      price: 109.95,
-      description:
-        "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      category: "men's clothing",
+      brand_name : "SHAZNAVI RUGS",
+      title: "Shaznavi Modern Shag Rugs Luxurious Soft Handmade Shaggy Carpets ( Micro Silk, Multi )",
+      price: 5199,
+      description: "This traditional style premium collection area shaggy rugs super soft handwoven shag for home living room bedroom rugs is made of with natural micro silk wool and fine colours which give super soft shaggy handmade carpets for living room bedroom home gallery banquet hall and anywhere in your house. Dear Buyer we take more days for longer size.",
+      category: "carpets and rugs",
+      model : "geometric",
+      pile : "High Pile",
+      color : "Red",
       image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       rating: {
-        rate: 3.9,
+        rate: 4.9,
         count: 120,
       },
     },

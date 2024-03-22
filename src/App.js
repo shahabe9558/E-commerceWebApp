@@ -9,8 +9,10 @@ import SignUp from './pages/SignUp';
 
 function App() {
   return (
-    <div className='w-[100%] h-[100%] flex flex-col'>
-      <div className='bg-richblack-900'> 
+    <div className=" w-[100%] h-[100vh] flex flex-col 
+    bg-[url('https://www.obeetee.in/cdn/shop/files/dekstop_d0156670-b70c-49ba-8c40-f73125255dec_1800x.jpg?v=1707892891')] 
+    bg-no-repeat">
+      <div className=''> 
         <Navbar/>
       </div>
       <Routes>
