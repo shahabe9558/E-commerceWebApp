@@ -73,12 +73,12 @@ const SignUpForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="text-white mt-8">
+    <form onSubmit={submitHandler} className="mt-8 text-black">
       <div className="flex bg-richblack-800 max-w-max rounded-full p-1 gap-x-1">
         <div
           className={`${
             accountType === "buyer"
-              ? "bg-richblack-900 text-richblack-5"
+              ? "bg-richblack-900 "
               : "bg-transparent text-richblack-200"
           } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("buyer")}
@@ -89,7 +89,7 @@ const SignUpForm = () => {
         <div
           className={`${
             accountType === "vendor"
-              ? "bg-richblack-900 text-richblack-5"
+              ? "bg-richblack-900"
               : "bg-transparent text-richblack-200"
           } py-2 px-5 rounded-full transition-all duration-200`}
           onClick={() => setAccountType("vendor")}
@@ -101,7 +101,7 @@ const SignUpForm = () => {
       <div className="flex gap-x-4">
         <label
           htmlFor="firstName"
-          className="w-full text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]"
+          className="w-full mb-1 text-[0.875rem] leading-[1.375rem]"
         >
           First Name
           <input
@@ -111,12 +111,12 @@ const SignUpForm = () => {
             name="firstName"
             value={formdata.firstName}
             onChange={changeHandler}
-            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
+            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px] text-white"
           />
         </label>
         <label
           htmlFor="lastName"
-          className="w-full text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]"
+          className="w-full mb-1 text-[0.875rem] leading-[1.375rem]"
         >
           Last Name
           <input
@@ -126,13 +126,13 @@ const SignUpForm = () => {
             name="lastName"
             value={formdata.lastName}
             onChange={changeHandler}
-            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
+            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px] text-white "
           />
         </label>
       </div>
       <label
         htmlFor="email"
-        className="w-full text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem] "
+        className="w-full  mb-1 text-[0.875rem] leading-[1.375rem] "
       >
         Email Address
         <input
@@ -143,13 +143,13 @@ const SignUpForm = () => {
           id="email"
           value={formdata.email}
           onChange={changeHandler}
-          className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
+          className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px] text-white"
         />
       </label>
       <div className="flex gap-x-4">
         <label
           htmlFor="password"
-          className="w-full relative text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]"
+          className="w-full relative  mb-1 text-[0.875rem] leading-[1.375rem]"
         >
           Create Password
           <input
@@ -160,11 +160,11 @@ const SignUpForm = () => {
             id="password"
             value={formdata.password}
             onChange={changeHandler}
-            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
+            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px] text-white"
           />
           <span
             onClick={setShowPasswordHandler}
-            className="absolute top-[38px] right-3 z-10 cursor-pointer"
+            className="absolute top-[38px] right-3 z-10 cursor-pointer text-white"
           >
             {showPassword ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
           </span>
@@ -172,7 +172,7 @@ const SignUpForm = () => {
 
         <label
           htmlFor="ConfirmPass"
-          className="w-full relative text-richblack-5 mb-1 text-[0.875rem] leading-[1.375rem]"
+          className="w-full relative  mb-1 text-[0.875rem] leading-[1.375rem]"
         >
           Confirm Password
           <input
@@ -183,11 +183,11 @@ const SignUpForm = () => {
             id="ConfirmPass"
             value={formdata.ConfirmPass}
             onChange={changeHandler}
-            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px]"
+            className="bg-richblack-800 rounded-[4px] w-full px-[12px] py-[8px] text-white"
           />
           <span
             onClick={setShowPasswordHandler2}
-            className="absolute top-[38px] right-3 z-10 cursor-pointer"
+            className="absolute top-[38px] right-3 z-10 cursor-pointer text-white"
           >
             {showPassword2 ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
           </span>

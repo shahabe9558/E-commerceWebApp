@@ -1,0 +1,29 @@
+/* .cart3:hover{ */
+  /* transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  /* background: #000; */
+  /* width: 40%; */ 
+  /* transition: width 2s linear 1s;
+  width: 30%; */
+  /* animation-name: caret;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0ms;
+}
+@keyframes caret {
+  from { 
+    width: 20%;
+  }
+  to{
+    width: 40%;
+  }
+} */
+.cart3{
+  transition-property: transform;
+  transition-duration: 10s;
+  transition-timing-function: ease-in;
+  transition-delay: 0ms;
+  /* transform: rotate(180deg); */
+}

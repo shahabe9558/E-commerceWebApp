@@ -4,7 +4,7 @@ import img from "../assets/login.webp";
 
 const Login = () =>{
     return(
-        <div className="w-[100%] space-y-10 bg-richblack-900">
+        <div className="w-[100%] space-y-1 bg-white">
             <Template
             className =""
             title={"Want Explore Our Collection..? "}

@@ -1,0 +1,38 @@
+@media (max-width:600px) {
+    .cat{
+        grid-template-columns: auto;
+    }
+}
+@media (min-width:600px) {
+    .cat{
+        grid-template-columns: auto auto;
+    }
+}
+@media (min-width:768px) {
+    .cat{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media (min-width:922px) {
+    .cat{
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
+/* @media (min-width:1200px) {
+    .cat{
+        grid-template-columns: auto auto auto auto;
+    }
+} */
+.thread{
+    animation-name: upDown;
+    transform: rotate(30deg);
+}
+@keyframes upDown{
+    from {
+        transform: translate(0%);
+    }
+    to{
+        transform: translate(20%);
+    }
+
+}

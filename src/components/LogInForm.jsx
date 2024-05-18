@@ -48,7 +48,7 @@ const LogInForm = () => {
     }
     return(
         <form onSubmit={submitHandler} className="flex flex-col w-full gap-y-4 mt-6">
-            <label htmlFor="email1" className="w-full text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">Email Address
+            <label htmlFor="email1" className="w-full text-[0.875rem] mb-1 leading-[1.375rem]">Email Address
                 <sup>*</sup>
             </label>
             <input 
@@ -59,11 +59,11 @@ const LogInForm = () => {
             placeholder="Enter Email"
             value={FormData.email}
             onChange={changeHandler}
-            className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
+            className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-white"
             />
 
             <label htmlFor="pass" className="w-full relative">
-                <p className="text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]">
+                <p className="text-[0.875rem] mb-1 leading-[1.375rem]">
                     Password <sup className="text-pink-400">*</sup>
                 </p>
                 <input
@@ -76,17 +76,16 @@ const LogInForm = () => {
                 placeholder="Password"
                 className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
                 />
-                <span onClick={setShowPasswordHandler} className="absolute right-3 top-[38px] cursor-pointer">
+                <span onClick={setShowPasswordHandler} className="absolute right-3 text-white top-[38px] cursor-pointer">
                       {showPassword ? (<AiOutlineEye/>) : (<AiOutlineEyeInvisible/>)}
                 </span>
                 <Link to="#">
-                    <p className="text-xs mt-1 text-blue-100 max-w-max ml-auto">
+                    <p className="text-xs mt-1 max-w-max ml-auto">
                         Forgot Password
                     </p>
                 </Link>
             </label>
             <button className="bg-yellow-50 py-[8px] px-[12px] rounded-[8px] mt-6 font-semibold text-black">Sign In</button>  
-
         </form>
     );
 
