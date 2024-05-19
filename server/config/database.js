@@ -7,7 +7,7 @@ const connectWithDb = () =>{
         console.log("connected with db successfully");
     })
     .catch((error)=>{
-        console.log("Error while connnectin to db");
+        console.log("Error while connnecting to db");
     })
 }
 module.exports = connectWithDb;

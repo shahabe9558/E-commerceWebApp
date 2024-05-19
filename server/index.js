@@ -20,7 +20,7 @@ const signRoutes = require('./routes/User');
 app.use('/api/v1', signRoutes);
 
 
-const dbConnect = require("./config/database");
+const dbConnect = require('./config/database');
 dbConnect();
 
 // listining the app on a port 
