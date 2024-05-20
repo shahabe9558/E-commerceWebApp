@@ -32,7 +32,7 @@ function App() {
       </div>
       {/* pages of the site */}
       <Routes>
-        <Route path='/' element = {<Home/>} />
+        <Route index element = {<Home/>} />
         <Route path='/cart' element = {<Cart/>} />
         <Route path='/login' element = {<Login/>} />
         <Route path='/signup' element = {<SignUp/>} />

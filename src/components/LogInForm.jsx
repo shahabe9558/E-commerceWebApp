@@ -32,7 +32,13 @@ const LogInForm = () => {
     const apiCall = async () => { 
             try{
                 let response = await apiConnector("POST", endPoint.LOG_IN_API, {email, password});
-                console.log("Response is ", response);
+                if(response)
+                    {
+                        toast.success("User Log in Successfuly");
+                        navigate('/');
+                        dispath(setisLogIn(true));
+                    }
+                    console.log("Res is", response);
             }
             catch(error){
                 console.log(error);
