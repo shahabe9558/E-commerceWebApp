@@ -151,7 +151,7 @@ exports.order = async (req, res) => {
    let mailOptions = {
       from: 'shahabe9559@gmail.com',
       to: 'alam955941@gmail.com',
-      subject: 'Order On Ecomzy',
+      subject: 'Order On Shaznavi Rugs',
       text: `Order Reaceive of amount ${amount} 
       for item no. ${cart.length}`
    };

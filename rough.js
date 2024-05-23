@@ -1,18 +1,35 @@
-// const obj = [
-//     { 
-//         m1 : "dsfjd",
-//         m2 :"dkfjsf",
-//         arr : ["m1", "m2", "m3", "m4"],
-//     }
-// ];
-// console.log(obj[0].arr[3]);
-const obj = {
-    fName: "Shahabe",
-    lName : "Alam",
-    email : "shahabe9559@gmail.com",
-}
-console.log(obj.find("Alam"));
+const express = require('express');
+const {createServer } = require('node:http');
+const app = express();
+require('dotenv').config();
+
+const PORT = process.env.PORT  || 4000;
 
 
 
 
+// body parser  to pass the data  from front to database  
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+const cors = require('cors');
+app.use(cors());
+
+// definning the routes of the controlllers 
+// console.log("Yaha tak thik kamm kar raha hai");
+const signRoutes = require('./routes/User');
+app.use('/api/v1', signRoutes);
+
+
+const dbConnect = require('./config/database');
+dbConnect();
+
+// listining the app on a port 
+app.listen(PORT, ()=>{
+    console.log(`Server started running at port ${PORT}`);
+})
+
+// getting the result 
+app.get('/', cors(), (req, res)=>{
+    res.send('<h1>Working tree clean nothing to commit</h1>');
+})

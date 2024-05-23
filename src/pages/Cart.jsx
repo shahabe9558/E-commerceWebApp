@@ -22,7 +22,6 @@ const Cart = () => {
       amount,
       cart,
     });
-    console.log(response);
   };
 
   // order handler define here
