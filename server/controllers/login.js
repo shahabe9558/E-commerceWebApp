@@ -1,4 +1,4 @@
-const { default: toast } = require('react-hot-toast');
+
 const Admin = require('../models/Admin');
 
 exports.login = async (req, res) => {
