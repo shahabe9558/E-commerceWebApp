@@ -1,10 +1,10 @@
 const express = require('express');
 const routes = express.Router();
 
-const {order} = require('../controllers/Auth');
 const { testingSign } = require('../controllers/testing');
 const {signup} = require('../controllers/signup');
 const { login } = require('../controllers/login');
+const {order} = require('../controllers/Order');
 
 
 routes.post('/signup', signup);
